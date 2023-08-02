@@ -4,9 +4,7 @@ from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homepage),
-    path('<int:timeframe>', views.goals_by_int_timeframe),
-    path('<str:timeframe>', views.goals_by_timeframe, name='namedurl'),
+    path('', views.homepage, name='homepage')
 ]
 # git init
 # git add .
