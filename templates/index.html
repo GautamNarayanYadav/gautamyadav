@@ -937,22 +937,22 @@
                 <h2>CONTACT MiKE</h2>
                 <p class="section-subtitle"><span>Here i am</span></p>
                 <div class="row">
-                    <form>
+                    <form id="message" method="post">
                         <div class="col-md-4">
-                            <input class="form-control" type="text" placeholder="Name" required>
+                            <input class="form-control" type="text" name="name" placeholder="Name" required>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" type="email" placeholder="Email" required>
+                            <input class="form-control" type="email" name="email" placeholder="Email" required>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" type="text" placeholder="Subject" required>
+                            <input class="form-control" type="text" name="subject" placeholder="Subject" required>
                         </div>
                         <div class="col-sm-12">
-                            <textarea class="form-control" placeholder="Your Message"  required></textarea>
+                            <textarea class="form-control" name="message" placeholder="Your Message"  required></textarea>
                         </div>
 
                         <div class="col-sm-12">
-                            <button class="btn btn-inverted">Send Message</button>
+                            <button type="submit" class="btn btn-inverted">Send Message</button>
                         </div>  
                     </form>
                 </div>
@@ -1193,6 +1193,48 @@
 
     <!-- Custom JS -->
     <script src="{% static 'js/script.js' %}"></script>
-  
+      <script type="text/javascript">
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+</script>
+
+    <script>
+	$(document).on('submit', '#message', function(e){
+    e.preventDefault();
+    var csrf_token = getCookie('csrftoken');
+    var formData = new FormData(this);
+        var key = window.localStorage.getItem('access_token');
+    $.ajax({
+        url: "/api/system/message/",
+        method: "post",
+        headers: {"X-CSRFToken": csrf_token, "Authorization": "Token "+key},
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success:function(data){
+             alert("Successfully Send Message");
+<!--             $('#invite')['0'].reset();-->
+             window.location.href = '';
+        },
+        error:function(data){
+        alert("Please enter Details");
+        }
+    });
+});
+	</script>
+
 </body>
 </html>
