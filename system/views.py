@@ -23,7 +23,7 @@ def track_visit(request):
 
     # Your view logic here
 
-    return render(request, 'your_template.html', {'visit': visit})
+    return render(request, 'index.html', {'visit': visit})
 
 
 class MessageViewSet(viewsets.ModelViewSet):
