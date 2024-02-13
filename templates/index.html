@@ -43,6 +43,10 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -57,7 +61,7 @@
         <!-- Name & Description -->
         <div class="hero-content">
                 {% if profile %}
-            <h1>I am {{ profile.last.name }}</h1>
+            <h1 class="animate__heartBeat">I am {{ profile.last.name }}</h1>
                 {% endif %}
             <p class="hero-job"><span>I'M A CREATIVE WEB DEVELOPER</span></p>
             <p class="hero-job-desc">I STAND ON A SWEET SPOT WHERE DESIGN &amp; CODE INTERSECTS. </p>
@@ -113,7 +117,7 @@
     <main id="main" class="site-main">
 
         <section class="site-section section-about text-center" id="about">
-            <div class="container">
+            <div>
         <h2>About Me</h2>
         <p>
             Hello! I am a passionate web developer and software engineer with a keen interest in creating interactive and user-friendly web applications. I have completed my education from XYZ College and ABC School, and I am excited to share my projects and experiences with you.
@@ -127,7 +131,7 @@
         <p><strong>Email:</strong> imgautamyadav@gmail.com</p>
         <p><strong>Phone:</strong> 7688905718</p>
     </div>
-
+    <div>
         <ul>
             <li>
                 <strong>Arya Institute of Engineering & Technology, Jaipur</strong>
@@ -145,7 +149,7 @@
                 <p>2012-2013</p>
             </li>
         </ul>
-            </div>
+        </div>
     </section>
 
         <section class="site-section section-skills">
@@ -206,7 +210,7 @@
                         <div class="counter">
                             <div class="rectangle medium-rectangle ">
                                 <i class="fa fa-rocket" aria-hidden="true"></i>
-                                <span class="counter-start" data-to="167" data-speed="2000">20</span>
+                                <span class="counter-start" data-to="20" data-speed="2000">20</span>
                             </div><!-- /.rectangle -->
                             <p>Projects Launched</p>
                         </div><!-- /.counter -->
@@ -405,252 +409,6 @@
         </section><!-- /.section-services -->
         <!-- End Services section -->
 
-        <!-- Reviews section -->
-<!--        <section class="site-section section-reviews text-center">-->
-<!--            <div class="container">-->
-<!--                <h2>Client Reviews</h2>-->
-<!--                <p class="section-subtitle"><span>OUR CLIENTS LOVE US! READ WHAT THEY HAVE TO SAY</span></p>-->
-<!--            </div>-->
-
-<!--            <div class="blue-bg">-->
-<!--                <div class="container">-->
-<!--                    <div class="review-carousel">-->
-<!--                        &lt;!&ndash; Review 1 &ndash;&gt;-->
-<!--                        <div class="review">-->
-<!--                            <div class="rectangle">-->
-<!--                                <img src="{% static 'img/review.jpg' %}" class="img-res" alt="">-->
-<!--                            </div>-->
-<!--                            <p>If there were 100 star rating I would leave 110. I have been building WP sites now full time for 7 years and in business for 12 and have never worked with such a solid company with such a wonderful set of themes.</p>-->
-<!--                            <div class="review-author">-->
-<!--                                <h3>Mike Taylor</h3>-->
-<!--                                <p>CEO at Sports Portal</p>-->
-<!--                            </div>&lt;!&ndash; /.review-author &ndash;&gt;-->
-<!--                        </div>&lt;!&ndash; /.review &ndash;&gt;-->
-<!--                        &lt;!&ndash; Review 2 &ndash;&gt;-->
-<!--                        <div class="review">-->
-<!--                            <div class="rectangle">-->
-<!--                                <img src="{% static 'img/review-2.jpg' %}" class="img-res" alt="">-->
-<!--                            </div>-->
-<!--                            <p>Diana Johnson is a rare SEO consultant who does things the right way. I’ve been consistently impressed with her process, organization and strategic method of doing SEO the right way.</p>-->
-<!--                            <div class="review-author">-->
-<!--                                <h3>Anna Murray</h3>-->
-<!--                                <p>CEO at Law firm</p>-->
-<!--                            </div>&lt;!&ndash; /.review-author &ndash;&gt;-->
-<!--                        </div>&lt;!&ndash; /.review &ndash;&gt;-->
-<!--                    </div>&lt;!&ndash; /.review-carousel &ndash;&gt;-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>&lt;!&ndash; /.section-reviews &ndash;&gt;-->
-        <!-- End Reviews section -->
-
-        <!-- Team section -->
-<!--        <section class="site-section section-team" id="team">-->
-<!--            <div class="container">-->
-<!--                <h2>MEET MY TEAM</h2>-->
-<!--                <p class="section-subtitle"><span>This is the team that is working with me</span></p>-->
-<!--                -->
-<!--                <div class="team">-->
-<!--                    <div class="row">   -->
-<!--                        &lt;!&ndash; Team Member &ndash;&gt; -->
-<!--                        <div class="col-md-3 col-xs-6">-->
-<!--                            <div class="team-member">-->
-<!--                                <div class="flipper">-->
-<!--                                    <div class="team-member-front">-->
-<!--                                        <div class="team-member-thumb">-->
-<!--                                            <img src="{% static 'img/employee-1.jpg' %}" class="img-res" alt="">-->
-<!--                                        </div>  &lt;!&ndash; /.team-member-thumb &ndash;&gt;-->
-<!--                                        <p class="team-member-front-name">DIANA JOHNSON</p>-->
-<!--                                    </div>&lt;!&ndash; /.team-member-front &ndash;&gt;-->
-<!--                                    <div class="team-member-back">-->
-<!--                                        <div class="team-member-info">-->
-<!--                                            <h3 class="team-member-back-name">DIANA JOHNSON</h3>-->
-<!--                                            <p class="team-member-back-position">Web Designer</p>-->
-<!--                                            <p class="team-member-back-info">Curabitur nulla odio bibendum sit amet facilisis sed lobortis id, just Donec ollic itudin facil isis nulla. Donec eget ligula. </p>-->
-<!--                                            <div class="social-icons small">-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-facebook"></i></a>-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-twitter"></i></a>-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-linkedin"></i></a>-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-dribbble"></i></a>-->
-<!--                                            </div>-->
-<!--                                        </div>&lt;!&ndash; /.team-member-back-info &ndash;&gt;-->
-<!--                                    </div>&lt;!&ndash; /.team-member-back &ndash;&gt;  -->
-<!--                                </div>         -->
-<!--                            </div>&lt;!&ndash; /.team-member &ndash;&gt;       -->
-<!--                        </div>-->
-<!--                        &lt;!&ndash; Team Member &ndash;&gt; -->
-<!--                        <div class="col-md-3 col-xs-6">-->
-<!--                            <div class="team-member">-->
-<!--                                <div class="flipper">-->
-<!--                                    <div class="team-member-front">-->
-<!--                                        <div class="team-member-thumb">-->
-<!--                                            <img src="{% static 'img/employee-2.jpg' %}" class="img-res" alt="">-->
-<!--                                        </div>  &lt;!&ndash; /.team-member-thumb &ndash;&gt;-->
-<!--                                        <p class="team-member-front-name">ADAM HENRY</p>-->
-<!--                                    </div>&lt;!&ndash; /.team-member-front &ndash;&gt;-->
-<!--                                    <div class="team-member-back">-->
-<!--                                        <div class="team-member-info">-->
-<!--                                            <h3 class="team-member-back-name">ADAM HENRY</h3>-->
-<!--                                            <p class="team-member-back-position">Web Developer</p>-->
-<!--                                            <p class="team-member-back-info">Curabitur nulla odio bibendum sit amet facilisis sed lobortis id, just Donec ollic itudin facil isis nulla. Donec eget ligula. </p>-->
-<!--                                            <div class="social-icons small">-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-facebook"></i></a>-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-twitter"></i></a>-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-linkedin"></i></a>-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-dribbble"></i></a>-->
-<!--                                            </div>-->
-<!--                                        </div>&lt;!&ndash; /.team-member-back-info &ndash;&gt;-->
-<!--                                    </div>&lt;!&ndash; /.team-member-back &ndash;&gt;  -->
-<!--                                </div>         -->
-<!--                            </div>&lt;!&ndash; /.team-member &ndash;&gt;       -->
-<!--                        </div>-->
-<!--                        &lt;!&ndash; Team Member &ndash;&gt; -->
-<!--                        <div class="col-md-3 col-xs-6">-->
-<!--                            <div class="team-member">-->
-<!--                                <div class="flipper">-->
-<!--                                    <div class="team-member-front">-->
-<!--                                        <div class="team-member-thumb">-->
-<!--                                            <img src="{% static 'img/employee-3.jpg' %}" class="img-res" alt="">-->
-<!--                                        </div>  &lt;!&ndash; /.team-member-thumb &ndash;&gt;-->
-<!--                                        <p class="team-member-front-name">ROBERT DOE</p>-->
-<!--                                    </div>&lt;!&ndash; /.team-member-front &ndash;&gt;-->
-<!--                                    <div class="team-member-back">-->
-<!--                                        <div class="team-member-info">-->
-<!--                                            <h3 class="team-member-back-name">ROBERT DOE</h3>-->
-<!--                                            <p class="team-member-back-position">Mobile APP Developer</p>-->
-<!--                                            <p class="team-member-back-info">Curabitur nulla odio bibendum sit amet facilisis sed lobortis id, just Donec ollic itudin facil isis nulla. Donec eget ligula. </p>-->
-<!--                                            <div class="social-icons small">-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-facebook"></i></a>-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-twitter"></i></a>-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-linkedin"></i></a>-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-dribbble"></i></a>-->
-<!--                                            </div>-->
-<!--                                        </div>&lt;!&ndash; /.team-member-back-info &ndash;&gt;-->
-<!--                                    </div>&lt;!&ndash; /.team-member-back &ndash;&gt;  -->
-<!--                                </div>         -->
-<!--                            </div>&lt;!&ndash; /.team-member &ndash;&gt;       -->
-<!--                        </div>-->
-<!--                        &lt;!&ndash; Team Member &ndash;&gt; -->
-<!--                        <div class="col-md-3 col-xs-6">-->
-<!--                            <div class="team-member">-->
-<!--                                <div class="flipper">-->
-<!--                                    <div class="team-member-front">-->
-<!--                                        <div class="team-member-thumb">-->
-<!--                                            <img src="{% static 'img/employee-4.jpg' %}" class="img-res" alt="">-->
-<!--                                        </div>  &lt;!&ndash; /.team-member-thumb &ndash;&gt;-->
-<!--                                        <p class="team-member-front-name">JULIA BROWN</p>-->
-<!--                                    </div>&lt;!&ndash; /.team-member-front &ndash;&gt;-->
-<!--                                    <div class="team-member-back">-->
-<!--                                        <div class="team-member-info">-->
-<!--                                            <h3 class="team-member-back-name">JULIA BROWN</h3>-->
-<!--                                            <p class="team-member-back-position">Seo Specialist</p>-->
-<!--                                            <p class="team-member-back-info">Curabitur nulla odio bibendum sit amet facilisis sed lobortis id, just Donec ollic itudin facil isis nulla. Donec eget ligula. </p>-->
-<!--                                            <div class="social-icons small">-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-facebook"></i></a>-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-twitter"></i></a>-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-linkedin"></i></a>-->
-<!--                                                <a href="#" class="rectangle"><i class="fa fa-dribbble"></i></a>-->
-<!--                                            </div>-->
-<!--                                        </div>&lt;!&ndash; /.team-member-back-info &ndash;&gt;-->
-<!--                                    </div>&lt;!&ndash; /.team-member-back &ndash;&gt;  -->
-<!--                                </div>         -->
-<!--                            </div>&lt;!&ndash; /.team-member &ndash;&gt;       -->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>&lt;!&ndash; /.team &ndash;&gt;   -->
-<!--            </div>-->
-<!--        </section>&lt;!&ndash; /.section-team &ndash;&gt;-->
-        <!-- End Team section -->
-
-        <!-- History section --> 
-<!--        <section class="section-history" id="history">-->
-<!--            <div class="container">          -->
-<!--                <div class="text-center section-diff-title">     -->
-<!--                    <h2>A Look Back At Our History</h2>-->
-<!--                    <p>This my Education and Experience</p>-->
-<!--                </div> -->
-<!--                &lt;!&ndash; Timeline &ndash;&gt; -->
-<!--                <ul class="timeline">-->
-<!--                    &lt;!&ndash; Timeline badge &ndash;&gt; -->
-<!--                    <li class="timeline-start">-->
-<!--                        <div class="rectangle"><span>2016</span></div>-->
-<!--                    </li>&lt;!&ndash; /.timeline-start &ndash;&gt;-->
-
-<!--                    &lt;!&ndash; Timeline job & description  &ndash;&gt; -->
-<!--                    <li>-->
-<!--                        <div class="rectangle timeline-rectangle"></div>-->
-<!--                        <div class="timeline-panel">-->
-<!--                            <div class="timeline-heading">-->
-<!--                                <div class="timeline-date">-->
-<!--                                    <p>13 sep</p>-->
-<!--                                </div>&lt;!&ndash; /.timeline-date &ndash;&gt;-->
-<!--                                <div class="timeline-position">-->
-<!--                                    <p>Web design &amp; Development</p>-->
-<!--                                </div>&lt;!&ndash; /.timeline-position &ndash;&gt;-->
-<!--                            </div>&lt;!&ndash; /.timeline-heading &ndash;&gt;-->
-<!--                            <div class="timeline-body">-->
-<!--                                <div class="timeline-body-thumb">-->
-<!--                                    <img src="{% static 'img/timeline-img.jpg' %}" class="img-res" alt="">-->
-<!--                                </div>&lt;!&ndash; /.timeline-body-thumb &ndash;&gt;-->
-<!--                                <p>Designing and developing a Wordpress Website</p>-->
-<!--                            </div>&lt;!&ndash; /.timeline-body &ndash;&gt;-->
-<!--                        </div>&lt;!&ndash; /.timeline-panel &ndash;&gt;-->
-<!--                    </li>-->
-
-<!--                    &lt;!&ndash; Timeline badge &ndash;&gt; -->
-<!--                    <li class="timeline-start">-->
-<!--                        <div class="rectangle"><span>2017</span></div>-->
-<!--                    </li>&lt;!&ndash; /.timeline-start &ndash;&gt;-->
-
-<!--                    &lt;!&ndash; Timeline job & description, inverted  &ndash;&gt; -->
-<!--                    <li class="timeline-inverted">-->
-<!--                        <div class="rectangle timeline-rectangle"></div>-->
-<!--                        <div class="timeline-panel">-->
-<!--                            <div class="timeline-heading">-->
-<!--                               <div class="timeline-position">-->
-<!--                                    <p>Web Design</p>-->
-<!--                                </div>&lt;!&ndash; /.timeline-position &ndash;&gt;-->
-<!--                                <div class="timeline-date">-->
-<!--                                    <p>5 Jan</p>-->
-<!--                                </div>&lt;!&ndash; /.timeline-date &ndash;&gt;-->
-<!--                            </div>&lt;!&ndash; /.timeline-heading &ndash;&gt;-->
-<!--                            <div class="timeline-body">-->
-<!--                                <div class="timeline-body-thumb">-->
-<!--                                    <img src="{% static 'img/timeline-img.jpg' %}" class="img-res" alt="">-->
-<!--                                </div>&lt;!&ndash; /.timeline-body-thumb &ndash;&gt;-->
-<!--                                <p>Designing a solution for mobile app</p>-->
-<!--                            </div>&lt;!&ndash; /.timeline-body &ndash;&gt;-->
-<!--                        </div>&lt;!&ndash; /.timeline-panel &ndash;&gt;-->
-<!--                    </li>&lt;!&ndash; /.timeline-inverted &ndash;&gt;-->
-
-<!--                    &lt;!&ndash; Timeline job & description  &ndash;&gt; -->
-<!--                    <li>-->
-<!--                        <div class="rectangle timeline-rectangle"></div>-->
-<!--                        <div class="timeline-panel">-->
-<!--                            <div class="timeline-heading">-->
-<!--                                <div class="timeline-date">-->
-<!--                                    <p>25 Aug</p>-->
-<!--                                </div>&lt;!&ndash; /.timeline-date &ndash;&gt;-->
-<!--                                <div class="timeline-position">-->
-<!--                                    <p>Seo Optimization</p>-->
-<!--                                </div>&lt;!&ndash; /.timeline-position &ndash;&gt;-->
-<!--                            </div>&lt;!&ndash; /.timeline-heading &ndash;&gt;-->
-<!--                            <div class="timeline-body">-->
-<!--                                <div class="timeline-body-thumb">-->
-<!--                                    <img src="{% static 'img/timeline-img.jpg' %}" class="img-res" alt="">-->
-<!--                                </div>&lt;!&ndash; /.timeline-body-thumb &ndash;&gt;-->
-<!--                                <p>SEO optimizing a couple of websites</p>-->
-<!--                            </div>&lt;!&ndash; /.timeline-body &ndash;&gt;-->
-<!--                        </div>&lt;!&ndash; /.timeline-panel &ndash;&gt;-->
-<!--                    </li>-->
-
-<!--                    &lt;!&ndash; Timeline Badge  &ndash;&gt; -->
-<!--                    <li class="timeline-end">-->
-<!--                        <div class="rectangle"><span>More</span></div>-->
-<!--                    </li>&lt;!&ndash; /.timeline-end &ndash;&gt;-->
-<!--                </ul>&lt;!&ndash; /.timeline &ndash;&gt;-->
-<!--            </div>-->
-<!--        </section>&lt;!&ndash; /.section-history &ndash;&gt;-->
-        <!-- End History section --> 
 
         <!-- Portfolio/Works section --> 
         <section class="site-section section-works" id="works">
@@ -926,7 +684,7 @@
         </div>
 
         <div class="container text-center">
-            <p class="copyright">&copy; <a href="/">GautamYadav</a> - 2023</p>
+            <p class="copyright">&copy; <a href="/">GautamYadav</a> - 2024</p>
         </div>
 
     </footer><!-- /#footer -->
@@ -1076,7 +834,9 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+    <style>
 
+    </style>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
