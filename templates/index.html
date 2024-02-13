@@ -922,22 +922,31 @@ function getCookie(name) {
 });
 	</script>
 <script>
-    // Track visit using JavaScript
-    function trackVisit() {
-        var trackingData = {
-            ip: null,  // You may need a server-side component to get the user's IP
-            userAgent: navigator.userAgent,
-            url: window.location.href
-        };
+   // Include the CSRF token in your AJAX request headers
+function trackVisit() {
+    var trackingData = {
+        ip: null,  // You may need a server-side component to get the user's IP
+        userAgent: navigator.userAgent,
+        url: window.location.href
+    };
 
-        // Send data to the server
-        if (navigator.sendBeacon) {
-            navigator.sendBeacon('/track-visit/', JSON.stringify(trackingData));
-        }
-    }
+    // Include the CSRF token
+    var csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value;
 
-    // Call the trackVisit function when the page is loaded
-    document.addEventListener('DOMContentLoaded', trackVisit);
+    // Send data to the server with CSRF token
+    fetch('/track-visit/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken
+        },
+        body: JSON.stringify(trackingData)
+    });
+}
+
+// Call the trackVisit function when the page is loaded
+document.addEventListener('DOMContentLoaded', trackVisit);
+
 </script>
 
 </body>
