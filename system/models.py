@@ -18,12 +18,3 @@ class Message(models.Model):
     def __str__(self):
         return self.name
 
-
-class Visit(models.Model):
-    ip_address = models.GenericIPAddressField(null=True, blank=True)
-    user_agent = models.CharField(max_length=255)
-    url = models.URLField()
-    timestamp = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"Visit from {self.ip_address} on {self.url} at {self.timestamp}"
