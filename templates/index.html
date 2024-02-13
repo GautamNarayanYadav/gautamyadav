@@ -118,6 +118,19 @@
 
         <section class="site-section section-about text-center" id="about">
             <div>
+                <h1>Welcome to Your Website!</h1>
+
+    {% if visit %}
+        <p>Visit Information:</p>
+        <ul>
+            <li>IP Address: {{ visit.ip_address }}</li>
+            <li>User Agent: {{ visit.user_agent }}</li>
+            <li>URL: {{ visit.url }}</li>
+            <li>Timestamp: {{ visit.timestamp }}</li>
+        </ul>
+    {% else %}
+        <p>Unable to retrieve visit information.</p>
+    {% endif %}
         <h2>About Me</h2>
         <p>
             Hello! I am a passionate web developer and software engineer with a keen interest in creating interactive
