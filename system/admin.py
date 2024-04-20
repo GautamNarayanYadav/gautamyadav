@@ -9,7 +9,13 @@ class MessageAdmin(admin.ModelAdmin):
     readonly_fields = ('datetime', )
 
 
+class BlogAdmin(admin.ModelAdmin):
+    model = Blog
+    list_display = ('id', 'intro', 'date', 'author')
+
+
 admin.site.register(Message, MessageAdmin)
+admin.site.register(Blog, BlogAdmin)
 admin.site.register(MyProfile)
 
 

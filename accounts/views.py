@@ -1,6 +1,7 @@
 from django.views.generic import ListView
 from rest_framework import viewsets, permissions, authentication
 
+from system.models import Blog
 from .models import *
 from .serializers import *
 
@@ -17,7 +18,7 @@ class profileListView(ListView):
     context_object_name = "profile"
     model = Profile
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(profileListView, self).get_context_data(**kwargs)
-    #     context['profiles'] = Profile.objects.all().last()
-    #     return context
+    def get_context_data(self, **kwargs):
+        context = super(profileListView, self).get_context_data(**kwargs)
+        context['blogs'] = Blog.objects.all().order_by('-id')[:2]
+        return context

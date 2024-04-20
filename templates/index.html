@@ -103,6 +103,7 @@
                         <li class="page-scroll"><a href="#about">About</a></li>
                         <li class="page-scroll"><a href="#services">Services</a></li>
                         <li class="page-scroll"><a href="#works">Works</a></li>
+                        <li class="page-scroll"><a href="#blog">Blog</a></li>
                         <li class="page-scroll"><a href="#contact">Contact</a></li>
                         
                     </ul><!-- /.navbar-nav -->
@@ -566,6 +567,22 @@
         </section><!-- /.section-me -->
         <!-- End Me section --> 
 
+
+        <!-- Blog section -->
+        <section class="blog-posts" id="blog">
+            {% for blog in blogs %}
+            <article>
+                <h2>{{blog.intro}}</h2>
+                <p class="meta">Posted on <time datetime="2024-04-30">{{blog.date}}</time> by <span>{{blog.user.profile.name}}</span></p>
+                <img src="{{ blog.image1.url }}" alt="Blog Image">
+
+                <p>{{blog.description1}}</p>
+                <a href="/blog/post1">Read More</a>
+            </article>
+            {% endfor %}
+        </section>
+
+
         <!-- Clients section --> 
         <section class="section-clients">
             <div class="container">
@@ -835,9 +852,7 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-    <style>
 
-    </style>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
