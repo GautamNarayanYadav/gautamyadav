@@ -18,6 +18,7 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
 # git init
 # git add .
 # git commit -m "Initial commit"
