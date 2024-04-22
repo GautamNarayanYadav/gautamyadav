@@ -15,6 +15,7 @@ urlpatterns = [
     path('api/system/', include('system.urls')),
     path('blog/', TemplateView.as_view(template_name='blogs.html'), name='blog'),
 ]
+
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # git init
